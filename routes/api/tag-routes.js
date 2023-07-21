@@ -2,9 +2,8 @@ const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', async (req, res) => {
-  // be sure to include its associated Product data
   try {
-  const tagData = await Tag.findAll();
+  const tagData = await Tag.findAll({include: [{model:Product, through: ProductTag, as: 'tagged_products'}]});
   res.status(200).json(tagData);
   } catch (err) {
     res.status(400).json(err);
@@ -13,8 +12,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-  // be sure to include its associated Product data
-  const tagData = await Tag.findByPk(req.params.id);
+  const tagData = await Tag.findByPk(req.params.id, {include: [{model:Product, through: ProductTag, as: 'tagged_products'}]});
   res.status(200).json(tagData);
   } catch (err) {
     res.status(400).json(err);
