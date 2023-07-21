@@ -6,7 +6,7 @@ This application allows an e-commerce site to access and modify a backend databa
 ## Usage
 This application can be initialized on node using the 'node server' command in the terminal. Using Insomnia, the user can perform CRUD database operations on the ecommerce database. See the video walkthrough linked below for further usage instruction.
 
-Link to the video walkthrough of the application for users:
+Link to the video walkthrough of the application for users: https://youtu.be/trPEjrMlTy8 
 
 ## Credits
 Many of the files in this application, including the config.js, the ecommerce_db database, the seeds js files, and the server file were initially created by the University of Denver Coding Bootcamp. I created the sequelize models and API routes, and well as slightly modifying some of the starter code.
